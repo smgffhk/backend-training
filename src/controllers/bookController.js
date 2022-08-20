@@ -105,4 +105,13 @@ const updateBookPrice=async function(req,res){
     res.send({updatedPrice : updatedPrice})
 }
 
+// const updaterating = async function(req,res){
+//         let ratenewbook = await AuthorModel.find({rating:{$gt:3.5}}).select({_id:1});
+//         let rate2 = ratenewbook.map(y=>y["_id"]);
+//         let updatenewrate = await BookModel.updateMany({author : {$in:(rate2)}},{$inc:{price: +10}});
+//         res.send(updatenewrate);
+//     }
+
+
+
 module.exports.updateBookPrice=updateBookPrice
