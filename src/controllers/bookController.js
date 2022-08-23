@@ -91,12 +91,8 @@ const allbooks= async function (req, res) {
      )
      res.send( { msg: allbooks})
 }
-
 module.exports.allbooks=allbooks
 
-
-
- 
 const updateBookPrice=async function(req,res){
     let objectId =await authorModel.find({rating:{$gt:3.5}})
     let updatedPrice = await bookModel.updateMany(
@@ -111,6 +107,16 @@ const updateBookPrice=async function(req,res){
 //         let updatenewrate = await BookModel.updateMany({author : {$in:(rate2)}},{$inc:{price: +10}});
 //         res.send(updatenewrate);
 //     }
+
+// const updateCover = async function (req,res) {
+//     let publisherId = await publisherModel.find({name: {$in:  ["Penguin", "HarperCollins"] }  } ).select({_id:1})
+//     let updateNewBook = await bookModel.updateMany({publisher:publisherId},{$set:{isHardCover:true, new:true, upsert:true}})
+
+//     let authorId = await authorModel.find({rating: {$gt: 3.5}}).select({_id:1})
+//     let updateRating = await bookModel.updateMany({author:authorId},{$inc:{price:10}})
+
+//    return res.send("update all")
+// }
 
 
 
