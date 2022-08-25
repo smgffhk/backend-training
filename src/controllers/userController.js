@@ -1,30 +1,22 @@
 const UserModel= require("../models/userModel")
 
-
-
-
-const basicCode= async function(req, res) {
-    let tokenDataInHeaders= req.headers.token
-    console.log(tokenDataInHeaders)
-
-    console.log( "HEADER DATA ABOVE")
-    console.log( "hey man, congrats you have reached the Handler")
-    res.send({ msg: "This is coming from controller (handler)"})
+//---assignment---//
+const basicCode= async function(req, res,next) {
+    let date=new Date();
+    let ip=req.ip;
+    let url= req.originalUrl;
+    console.log(date," ", ip," ",url)
     }
+    module.exports.basicCode= basicCode
 
+// const basicCode= async function(req, res) {
+//     let tokenDataInHeaders= req.headers.token
+//     console.log(tokenDataInHeaders)
 
-
-
-
-
-
-
-
-
-
-
-
-
+//     console.log( "HEADER DATA ABOVE")
+//     console.log( "hey man, congrats you have reached the Handler")
+//     res.send({ msg: "This is coming from controller (handler)"})
+//     }
 
 
 
@@ -43,4 +35,3 @@ const getUsersData= async function (req, res) {
 
 module.exports.createUser= createUser
 module.exports.getUsersData= getUsersData
-module.exports.basicCode= basicCode
