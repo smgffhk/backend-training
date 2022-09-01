@@ -20,6 +20,19 @@ mongoose.connect("mongodb+srv://surajkumar96:6i0d4EhtRtZ5xCEQ@cluster0.mqcx8wl.m
 //         next();
 //   }
 //   );
+
+app.use (
+    function (req, res, next) {
+        const currentDate=new Date()
+        console.log(currentDate)
+
+        let ip = require("ip")
+        console.log(ip.address())
+
+        console.log (req.path);
+        next();
+    }
+);
   
 
 app.use('/', route);
